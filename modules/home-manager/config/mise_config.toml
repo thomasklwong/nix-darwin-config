@@ -1,0 +1,37 @@
+# See https://mise.jdx.dev/configuration.html
+
+[env]
+MISE_NODE_COREPACK = 'true'
+
+[tools]
+# To avoid delay in Nix package, move all Node.js package from Nix to Mise.
+node = 'latest'
+
+# Refer to https://mise.jdx.dev/dev-tools/backends/npm.html#npm-backend
+# on how to use npm backend.
+"npm:@google/gemini-cli" = 'latest'
+"npm:@fission-ai/openspec" = 'latest'
+"npm:@aisuite/chub" = 'latest'
+
+# set with `mise use -g`
+# node = 'lts'
+# python = ['3.12']
+# go = '1.22'
+# java = ['22','21']
+# ruby = '3.3'
+# bun = 'latest'
+# deno = 'latest'
+
+[settings]
+
+# Enable support of .nvmrc and other non-mise ones.
+legacy_version_file = true
+legacy_version_file_disable_tools = []
+idiomatic_version_file_enable_tools = ['python']
+
+plugin_autoupdate_last_check_duration = '1 day'
+
+# Config files with this prefix will be trusted by default
+trusted_config_paths = ['~/src']
+
+python.uv_venv_auto = true
