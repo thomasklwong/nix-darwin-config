@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./git.nix
+    ./zsh.nix
+  ];
+
   home.stateVersion = "24.11";
 
   # Map declarative configs from our config/ directory
@@ -10,8 +15,18 @@
   home.file.".ssh/config".source = ./config/ssh_config;
   home.file."Library/Application Support/Rectangle/RectangleConfig.json".source = ./config/RectangleConfig.json;
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
+  home.sessionVariables = {
+    JAVA_HOME = "/Applications/Android Studio.app/Contents/jbr/Contents/Home";
+    ANDROID_HOME = "${config.home.homeDirectory}/Library/Android/sdk";
   };
+
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.local/bin"
+    "${config.home.homeDirectory}/.local/share/bin"
+    "/opt/homebrew/bin"
+    "${config.home.sessionVariables.ANDROID_HOME}/emulator"
+    "${config.home.sessionVariables.ANDROID_HOME}/platform-tools"
+    "${config.home.sessionVariables.ANDROID_HOME}/cmdline-tools/latest/bin"
+    "/Applications/Antigravity.app/Contents/Resources/app/bin"
+  ];
 }
