@@ -104,5 +104,21 @@
       "yam-display"
       "zenmap"
     ];
+
+    masApps = {
+      # Logged into the Mac App Store before running the nix-darwin rebuild.
+      # "iMovie" = 408981434;
+      "Keynote" = 409183694;
+      "Pages" = 409201541;
+      "Numbers" = 409203825;
+      "Disk Speed Test" = 425264550;
+      "Xcode" = 497799835;
+      "LINE" = 539883307;
+      # "GarageBand" = 682658836;
+      # "GoPro Player" = 1460836908;
+      "HP Smart" = 1474276998;
+      "1Password for Safari" = 1569813296;
+      # "Wireless@SGx" = 1449928544;
+    };
   };
 }
