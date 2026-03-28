@@ -22,7 +22,7 @@
     btop
     cloc
     rsync
-    
+
     # Development Tools
     _1password-cli
     age
@@ -31,7 +31,6 @@
     google-cloud-sdk
     awscli2
     devenv
-    mise
     mkcert
     nixfmt
     python3
@@ -42,7 +41,7 @@
     pandoc
     texliveSmall
     # wkhtmltopdf # Not supported on aarch64-darwin
-    
+
     # Security & Scanning
     syft
     license-scanner
@@ -51,14 +50,14 @@
     cyclonedx-cli
     sbom-utility
     nmap
-    
+
     # Container & Orchestration
     docker
     docker-compose
     podman
     kubectl
     kind
-    
+
     # Media & Network
     bento4
     shaka-packager
@@ -67,7 +66,7 @@
     inetutils
     iftop
     mitmproxy2swagger
-    
+
     # Specialized Tools
     apktool
     aspell
@@ -80,7 +79,7 @@
     qemu
     fclones
     python313Packages.curl-cffi
-    
+
     # Darwin Specific
     dockutil
     cocoapods

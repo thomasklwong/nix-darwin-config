@@ -7,7 +7,10 @@ in
 {
   programs.git = {
     enable = true;
-    ignores = [ "*.swp" ".DS_Store" ];
+    ignores = [
+      "*.swp"
+      ".DS_Store"
+    ];
 
     signing = {
       format = "openpgp";

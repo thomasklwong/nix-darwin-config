@@ -9,7 +9,7 @@
         SortDirection = 0;
       };
 
-      CustomSystemPreferences = {};
+      CustomSystemPreferences = { };
 
       CustomUserPreferences = {
         "com.apple.finder" = {

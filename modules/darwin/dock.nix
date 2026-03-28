@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 
@@ -15,42 +20,71 @@ in
 
     local.dock.entries = mkOption {
       description = "List of entries for the Dock (apps or folders)";
-      type = with types; listOf (submodule {
-        options = {
-          path = mkOption { type = str; description = "Path to the application or folder"; };
-          section = mkOption {
-            type = str;
-            default = "apps";
-            description = "Dock section (apps or others)";
+      type =
+        with types;
+        listOf (submodule {
+          options = {
+            path = mkOption {
+              type = str;
+              description = "Path to the application or folder";
+            };
+            section = mkOption {
+              type = str;
+              default = "apps";
+              description = "Dock section (apps or others)";
+            };
+            options = mkOption {
+              type = str;
+              default = "";
+              description = "Additional options for dockutil";
+            };
           };
-          options = mkOption {
-            type = str;
-            default = "";
-            description = "Additional options for dockutil";
-          };
-        };
-      });
-      default = [];
+        });
+      default = [ ];
     };
   };
 
   config = mkIf cfg.enable {
     environment.systemPackages = [ pkgs.dockutil ];
 
-    system.activationScripts.configureDock.text = 
+    system.activationScripts.configureDock.text =
       let
         normalize = path: if hasSuffix ".app" path then path + "/" else path;
-        entryURI = path: "file://" + (builtins.replaceStrings
-          [" "   "!"   "\""  "#"   "$"   "%"   "&"   "'"   "("   ")"]
-          ["%20" "%21" "%22" "%23" "%24" "%25" "%26" "%27" "%28" "%29"]
-          (normalize path)
-        );
-        wantURIs = concatMapStrings
-          (entry: "${entryURI entry.path}\n")
-          cfg.entries;
-        createEntries = concatMapStrings
-          (entry: "${pkgs.dockutil}/bin/dockutil --no-restart --add '${entry.path}' --section ${entry.section} ${entry.options}\n")
-          cfg.entries;
+        entryURI =
+          path:
+          "file://"
+          + (builtins.replaceStrings
+            [
+              " "
+              "!"
+              "\""
+              "#"
+              "$"
+              "%"
+              "&"
+              "'"
+              "("
+              ")"
+            ]
+            [
+              "%20"
+              "%21"
+              "%22"
+              "%23"
+              "%24"
+              "%25"
+              "%26"
+              "%27"
+              "%28"
+              "%29"
+            ]
+            (normalize path)
+          );
+        wantURIs = concatMapStrings (entry: "${entryURI entry.path}\n") cfg.entries;
+        createEntries = concatMapStrings (
+          entry:
+          "${pkgs.dockutil}/bin/dockutil --no-restart --add '${entry.path}' --section ${entry.section} ${entry.options}\n"
+        ) cfg.entries;
       in
       ''
         echo >&2 "Configuring Dock entries..."

@@ -3,7 +3,7 @@
 {
   homebrew = {
     enable = true;
-    
+
     onActivation = {
       autoUpdate = true;
       cleanup = "zap";
@@ -11,15 +11,22 @@
     };
 
     taps = [
-      "homebrew/cask-versions"
-      "homebrew/services"
+      "entireio/tap"
+      "hashicorp/tap"
+      "hmans/beans"
+      "homebrew/bundle"
+      "homebrew/cask"
+      "homebrew/core"
+      "proshunsuke/colmsg"
+      "steipete/codexbar"
+      "teamookla/speedtest"
     ];
 
     brews = [
       "cairo"
       "cocoapods"
       "colima"
-      "colmsg"
+      "proshunsuke/colmsg/colmsg"
       "czkawka"
       "gallery-dl"
       "giflib"
@@ -60,7 +67,7 @@
       "coconutbattery"
       "codexbar"
       "disk-drill"
-      "entire"
+      "entireio/tap/entire"
       "firefox"
       "firefox@developer-edition"
       "fork"

@@ -1,6 +1,13 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
-let user = "thomas"; in
+let
+  user = "thomas";
+in
 {
   imports = [
     ./system-defaults.nix
@@ -9,7 +16,7 @@ let user = "thomas"; in
   ];
 
   ids.gids.nixbld = 350;
-  
+
   users.users."${user}" = {
     name = user;
     home = "/Users/${user}";
@@ -23,24 +30,32 @@ let user = "thomas"; in
     checks.verifyNixPath = false;
   };
 
-
   nix = {
-    enable = true;
-    package = pkgs.nix;
+    package = pkgs.nixVersions.latest;
     settings = {
-      trusted-users = [ "@admin" "${user}" ];
+      trusted-users = [
+        "@admin"
+        "${user}"
+      ];
       download-buffer-size = 5368709120;
       experimental-features = "nix-command flakes";
     };
     gc = {
       automatic = true;
-      interval = { Weekday = 0; Hour = 2; Minute = 0; };
+      interval = {
+        Weekday = 0;
+        Hour = 2;
+        Minute = 0;
+      };
       options = "--delete-older-than 30d";
     };
   };
 
   programs.zsh.enable = true;
-  environment.shells = [ pkgs.bashInteractive pkgs.zsh ];
+  environment.shells = [
+    pkgs.bashInteractive
+    pkgs.zsh
+  ];
 
   # Declarative Dock configuration
   local.dock = {

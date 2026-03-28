@@ -1,4 +1,8 @@
-{ lib, stdenv, fetchurl }:
+{
+  lib,
+  stdenv,
+  fetchurl,
+}:
 
 stdenv.mkDerivation rec {
   pname = "N_m3u8DL-RE-bin";
@@ -16,7 +20,7 @@ stdenv.mkDerivation rec {
 
   sourceRoot = ".";
 
-  # Nix automatically unpacks tar.gz files. 
+  # Nix automatically unpacks tar.gz files.
   # We just need to copy the binary to the right place.
   installPhase = ''
     runHook preInstall
