@@ -50,7 +50,6 @@
       "tsduck"
       "you-get"
 
-      "mise"
       "yt-dlp"
     ];
 

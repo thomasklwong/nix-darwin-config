@@ -31,6 +31,7 @@
     google-cloud-sdk
     awscli2
     devenv
+    mise
     mkcert
     nixfmt
     python3
