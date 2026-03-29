@@ -31,6 +31,7 @@ in
   };
 
   nix = {
+    enable = true;
     package = pkgs.nixVersions.latest;
     settings = {
       trusted-users = [
