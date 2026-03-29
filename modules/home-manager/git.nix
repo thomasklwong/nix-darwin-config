@@ -13,16 +13,26 @@ in
     ];
 
     signing = {
-      format = "openpgp";
+      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE6JGbDRE20NKwRJO+p1x2qc//UrdaVfj9Gn2Pn2RVpJ";
+      format = "ssh";
+      signer = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
     };
 
     settings = {
       user = {
-        name = name;
-        email = email;
+        inherit name email;
       };
       init = {
         defaultBranch = "main";
+      };
+      commit = {
+        gpgsign = true;
+      };
+      gpg = {
+        format = "ssh";
+        ssh = {
+          program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+        };
       };
     };
 
