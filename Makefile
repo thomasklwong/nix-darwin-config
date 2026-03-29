@@ -12,5 +12,6 @@ update-all:
 fmt:
 	nix fmt
 
-check-fmt:
-	nix fmt -- --check
+check-all:
+	$(MAKE) fmt
+	nix build .#darwinConfigurations.macbook.system --dry-run
