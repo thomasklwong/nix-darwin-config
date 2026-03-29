@@ -48,14 +48,11 @@
           nix-shell '<nixpkgs>' -A "$1"
       }
 
+      help() {
+          "$@" --help 2>&1 | bathelp
+      }
+
       eval "$(mise activate zsh)"
     '';
-
-    shellAliases = {
-      ls = "ls --color=auto";
-      search = "rg -p --glob '!node_modules/*' ";
-      diff = "difft";
-      agy = "/Applications/Antigravity.app/Contents/Resources/app/bin/antigravity";
-    };
   };
 }

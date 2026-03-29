@@ -9,6 +9,7 @@
   imports = [
     inputs._1password-shell-plugins.hmModules.default
     ./1password.nix
+    ./bat.nix
     ./git.nix
     ./mise.nix
     ./zsh.nix
@@ -27,6 +28,8 @@
   home.sessionVariables = {
     JAVA_HOME = "/Applications/Android Studio.app/Contents/jbr/Contents/Home";
     ANDROID_HOME = "${config.home.homeDirectory}/Library/Android/sdk";
+    EDITOR = "agy";
+    MANPAGER = "bat -plman";
   };
 
   home.sessionPath = [
@@ -38,4 +41,15 @@
     "${config.home.sessionVariables.ANDROID_HOME}/cmdline-tools/latest/bin"
     "/Applications/Antigravity.app/Contents/Resources/app/bin"
   ];
+
+  home.shell.enableZshIntegration = true;
+
+  home.shellAliases = {
+    bathelp = "bat --plain --language=help";
+    cat = "bat";
+    ls = "ls --color=auto";
+    search = "rg -p --glob '!node_modules/*' ";
+    diff = "difft";
+    agy = "/Applications/Antigravity.app/Contents/Resources/app/bin/antigravity";
+  };
 }
