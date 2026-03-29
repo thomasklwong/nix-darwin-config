@@ -1,6 +1,9 @@
-# Spec: Git Settings
+# Specification: Git Settings
 
-## ADDED Requirements
+## Purpose
+The system SHALL configure Git with global identity, signing, and exclusion rules.
+
+## Requirements
 
 ### Requirement: Configure Global Git Identity
 Git should be globally configured with the user's name and email.
@@ -19,7 +22,7 @@ Git should be configured for signing commits using `openpgp`.
 - **THEN** it returns `"openpgp"`.
 
 ### Requirement: Git Global Ignores
-Git should globally ignore specific patterns like `*.swp`.
+Git should globally ignore specific patterns like `*.swp` and `.DS_Store`.
 
 #### Scenario: Verify Global Ignore
 - **WHEN** user commits a file named `test.swp`
