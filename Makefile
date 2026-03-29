@@ -4,6 +4,7 @@ update:
 	$(MAKE) fmt
 	nix build .#darwinConfigurations.macbook.system
 	sudo ./result/sw/bin/darwin-rebuild switch --flake .#macbook
+	mise upgrade
 
 update-all:
 	nix flake update
