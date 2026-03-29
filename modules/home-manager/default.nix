@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
+    inputs._1password-shell-plugins.hmModules.default
     ./git.nix
     ./zsh.nix
+    ./1password.nix
   ];
 
   home.stateVersion = "24.11";
