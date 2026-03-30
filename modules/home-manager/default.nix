@@ -10,6 +10,7 @@
     inputs._1password-shell-plugins.hmModules.default
     ./1password.nix
     ./bat.nix
+    ./bun.nix
     ./git.nix
     ./mise.nix
     ./zsh.nix
