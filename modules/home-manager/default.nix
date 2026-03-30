@@ -12,6 +12,7 @@
     ./bat.nix
     ./bun.nix
     ./difftastic.nix
+    ./docker.nix
     ./git.nix
     ./ghostty.nix
     ./mise.nix
@@ -19,7 +20,7 @@
   ];
 
   xdg.enable = true;
-  dircolors.enable = true;
+  programs.dircolors.enable = true;
 
   home.stateVersion = "24.11";
 
