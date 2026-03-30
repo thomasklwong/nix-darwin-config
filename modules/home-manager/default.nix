@@ -11,6 +11,7 @@
     ./1password.nix
     ./bat.nix
     ./bun.nix
+    ./difftastic.nix
     ./git.nix
     ./ghostty.nix
     ./mise.nix
@@ -18,6 +19,7 @@
   ];
 
   xdg.enable = true;
+  dircolors.enable = true;
 
   home.stateVersion = "24.11";
 
