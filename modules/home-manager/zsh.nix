@@ -10,6 +10,8 @@
     enable = true;
     autocd = false;
 
+    dotDir = "${config.xdg.configHome}/zsh";
+
     history = {
       size = 100000;
       save = 100000;
