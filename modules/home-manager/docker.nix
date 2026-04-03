@@ -3,8 +3,8 @@
   # --- DOCKER HYBRID ARCHITECTURE ---
   # Why: We manage Contexts (endpoints) via Nix for reproducibility across nodes,
   # but we keep config.json MUTABLE and OUTSIDE of Nix management.
-  # 
-  # Reason: 'docker login' (GHCR/DockerHub) and 'docker context use' require 
+  #
+  # Reason: 'docker login' (GHCR/DockerHub) and 'docker context use' require
   # write access to config.json. Nix-managed files are read-only symlinks.
   #
   # BOOTSTRAP COMMAND (Run once on new machines):
