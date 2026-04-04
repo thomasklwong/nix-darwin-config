@@ -1,26 +1,26 @@
 .PHONY: all update clean update-nix update-brew update-mise _update-mise clean-nix clean-brew clean-mise fmt check-all
 .DEFAULT_GOAL := all
 
-all:
+all: bootstrap
 	$(MAKE) update
 	$(MAKE) clean
 
-update:
+update: bootstrap
 	nix flake update
 	$(MAKE) _update-nix
 	$(MAKE) _update-brew
 	$(MAKE) _update-mise
 
-clean:
+clean: bootstrap
 	$(MAKE) clean-nix
 	$(MAKE) clean-brew
 	$(MAKE) clean-mise
 
-update-nix:
+update-nix: bootstrap
 	$(MAKE) _update-nix
 	$(MAKE) clean-nix
 
-update-brew:
+update-brew: bootstrap
 	$(MAKE) _update-brew
 	$(MAKE) clean-brew
 
@@ -55,3 +55,12 @@ fmt:
 check-all:
 	$(MAKE) fmt
 	nix build .#darwinConfigurations.macbook.system --dry-run
+
+BREW_PATH := /opt/homebrew/bin/brew
+bootstrap:
+	@if [ ! -f $(BREW_PATH) ]; then \
+		echo "Homebrew not found. Installing..."; \
+		/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; \
+	else \
+		echo "Homebrew already installed."; \
+	fi

@@ -11,22 +11,21 @@
     };
 
     taps = [
+      "Arthur-Ficial/tap"
       "entireio/tap"
       "hashicorp/tap"
       "hmans/beans"
-      "homebrew/bundle"
-      "homebrew/cask"
-      "homebrew/core"
       "proshunsuke/colmsg"
-      "steipete/codexbar"
+      "steipete/tap"
       "teamookla/speedtest"
     ];
 
     brews = [
+      "apfel"
       "cairo"
       "cocoapods"
       "colima"
-      "proshunsuke/colmsg/colmsg"
+      "colmsg"
       "czkawka"
       "gallery-dl"
       "giflib"
@@ -49,7 +48,6 @@
       "teamookla/speedtest/speedtest"
       "tsduck"
       "you-get"
-
       "yt-dlp"
     ];
 
@@ -66,7 +64,7 @@
       "coconutbattery"
       "codexbar"
       "disk-drill"
-      "entireio/tap/entire"
+      "entire"
       "firefox"
       "firefox@developer-edition"
       "fork"
