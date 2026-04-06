@@ -18,6 +18,11 @@
       "proshunsuke/colmsg"
       "steipete/tap"
       "teamookla/speedtest"
+      {
+        name = "jundot/omlx";
+        clone_target = "https://github.com/jundot/omlx";
+        force_auto_update = true;
+      }
     ];
 
     brews = [
@@ -39,6 +44,7 @@
       "librsvg"
       "mas"
       "mole"
+      "omlx"
       "pango"
       "pixman"
       "pkg-config"
