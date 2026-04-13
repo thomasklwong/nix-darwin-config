@@ -63,7 +63,6 @@
     bento4
     shaka-packager
     streamlink
-    tailscale
     inetutils
     iftop
     mitmproxy2swagger
