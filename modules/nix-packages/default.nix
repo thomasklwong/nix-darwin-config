@@ -38,7 +38,9 @@
     uv
     sqlite
     imagemagickBig
-    ffmpeg-full
+    # Downgraded from `ffmpeg-full` to `ffmpeg` to prevent OOM build failures from niche dependencies (like `kvazaar`).
+    # If a specific obscure codec is required for work, consider using `ffmpeg.override` instead of `ffmpeg-full`.
+    ffmpeg
     pandoc
     texliveSmall
     # wkhtmltopdf # Not supported on aarch64-darwin

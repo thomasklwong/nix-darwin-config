@@ -44,7 +44,7 @@
       "librsvg"
       "mas"
       "mole"
-      "omlx"
+      # "omlx"
       "pango"
       "pixman"
       "pkg-config"
@@ -119,8 +119,8 @@
       # Logged into the Mac App Store before running the nix-darwin rebuild.
       # "iMovie" = 408981434;
       "Keynote" = 409183694;
-      "Pages" = 409201541;
-      "Numbers" = 409203825;
+      # "Pages" = 409201541;
+      # "Numbers" = 409203825;
       "Disk Speed Test" = 425264550;
       "Xcode" = 497799835;
       "LINE" = 539883307;
