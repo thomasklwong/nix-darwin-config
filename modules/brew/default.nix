@@ -44,6 +44,7 @@
       "librsvg"
       "mas"
       "mole"
+      "mtr"
       # "omlx"
       "pango"
       "pixman"

@@ -41,6 +41,7 @@
     "${config.home.homeDirectory}/.local/bin"
     "${config.home.homeDirectory}/.local/share/bin"
     "/opt/homebrew/bin"
+    "/opt/homebrew/sbin"
     "${config.home.sessionVariables.ANDROID_HOME}/emulator"
     "${config.home.sessionVariables.ANDROID_HOME}/platform-tools"
     "${config.home.sessionVariables.ANDROID_HOME}/cmdline-tools/latest/bin"
