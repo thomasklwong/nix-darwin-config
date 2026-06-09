@@ -6,7 +6,7 @@
 
     onActivation = {
       autoUpdate = true;
-      cleanup = "zap";
+      cleanup = "none";
       upgrade = true;
     };
 
@@ -62,6 +62,9 @@
       "1password"
       #"adobe-digital-editions"
       "android-studio"
+      "antigravity"
+      "antigravity-cli"
+      "antigravity-ide"
       "appcleaner"
       "block-goose"
       "bruno"
