@@ -11,17 +11,39 @@
     };
 
     taps = [
-      "Arthur-Ficial/tap"
-      "entireio/tap"
-      "hashicorp/tap"
-      "hmans/beans"
-      "proshunsuke/colmsg"
-      "steipete/tap"
-      "teamookla/speedtest"
+      {
+        name = "Arthur-Ficial/tap";
+        trusted = true;
+      }
+      {
+        name = "entireio/tap";
+        trusted = true;
+      }
+      {
+        name = "hashicorp/tap";
+        trusted = true;
+      }
+      {
+        name = "hmans/beans";
+        trusted = true;
+      }
+      {
+        name = "proshunsuke/colmsg";
+        trusted = true;
+      }
+      {
+        name = "steipete/tap";
+        trusted = true;
+      }
+      {
+        name = "teamookla/speedtest";
+        trusted = true;
+      }
       {
         name = "jundot/omlx";
         clone_target = "https://github.com/jundot/omlx";
         force_auto_update = true;
+        trusted = true;
       }
     ];
 
@@ -66,7 +88,6 @@
       "antigravity-cli"
       "antigravity-ide"
       "appcleaner"
-      "block-goose"
       "bruno"
       "caffeine"
       "calibre"
@@ -89,7 +110,6 @@
       "iina"
       "keka"
       "kindle-previewer"
-      "lm-studio"
       "logi-options+"
       "macs-fan-control"
       "mitmproxy"
@@ -116,6 +136,7 @@
       "wireshark-app"
       "xquartz"
       "yam-display"
+      "zen"
       "zenmap"
     ];
 
