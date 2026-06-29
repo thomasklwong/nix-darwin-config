@@ -12,7 +12,7 @@
 
     taps = [
       {
-        name = "Arthur-Ficial/tap";
+        name = "arthur-ficial/tap";
         trusted = true;
       }
       {

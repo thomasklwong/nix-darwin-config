@@ -33,9 +33,10 @@
         bun = "latest";
         deno = "latest";
         node = "latest";
-        "@google/gemini-cli" = "latest";
-        "@fission-ai/openspec" = "latest";
-        "@aisuite/chub" = "latest";
+        pnpm = "latest";
+        "npm:@google/gemini-cli" = "latest";
+        "npm:@fission-ai/openspec" = "latest";
+        "npm:@aisuite/chub" = "latest";
       };
     };
   };
