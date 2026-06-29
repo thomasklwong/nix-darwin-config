@@ -53,6 +53,7 @@
       "cocoapods"
       "colima"
       "colmsg"
+      "container"
       "czkawka"
       "gallery-dl"
       "giflib"

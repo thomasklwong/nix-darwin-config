@@ -4,7 +4,7 @@
     enable = true;
     git = {
       enable = true;
-      diffToolMode = true;
+      mode = "difftool";
     };
     jujutsu.enable = true;
   };
