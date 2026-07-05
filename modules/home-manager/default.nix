@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   inputs,
   ...
 }:
@@ -27,8 +28,18 @@
   # Map declarative configs from our config/ directory
   home.file.".config/1Password/ssh/agent.toml".source = ./config/1Password_ssh_agent.toml;
   home.file.".ssh/config".source = ./config/ssh_config;
-  home.file."Library/Application Support/Rectangle/RectangleConfig.json".source =
-    ./config/RectangleConfig.json;
+
+  home.activation = {
+    copyRectangleConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      target="$HOME/Library/Application Support/Rectangle/RectangleConfig.json"
+      if [ -L "$target" ]; then
+        $DRY_RUN_CMD rm -f "$target"
+      fi
+      $DRY_RUN_CMD mkdir -p "$HOME/Library/Application Support/Rectangle"
+      $DRY_RUN_CMD cp -f ${./config/RectangleConfig.json} "$target"
+      $DRY_RUN_CMD chmod 600 "$target"
+    '';
+  };
 
   home.sessionVariables = {
     JAVA_HOME = "/Applications/Android Studio.app/Contents/jbr/Contents/Home";
