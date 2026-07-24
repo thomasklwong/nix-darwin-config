@@ -13,4 +13,16 @@ final: prev: {
   mise = prev.mise.overrideAttrs (old: {
     doCheck = false;
   });
+
+  pythonPackagesExtensions = (prev.pythonPackagesExtensions or [ ]) ++ [
+    (python-final: python-prev: {
+      mitmproxy = python-prev.mitmproxy.overrideAttrs (old: {
+        postPatch = (old.postPatch or "") + ''
+          substituteInPlace pyproject.toml \
+            --replace-warn 'msgpack>=1.0.0,<=1.1.2' 'msgpack>=1.0.0' \
+            --replace-warn 'msgpack<=1.1.2' 'msgpack<=1.2.1'
+        '';
+      });
+    })
+  ];
 }
