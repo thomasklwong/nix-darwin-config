@@ -40,6 +40,7 @@ in
       ];
       download-buffer-size = 5368709120;
       experimental-features = "nix-command flakes";
+      auto-optimise-store = true;
     };
     gc = {
       automatic = true;

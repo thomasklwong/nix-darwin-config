@@ -51,9 +51,6 @@
 
   home.sessionPath = [
     "${config.home.homeDirectory}/.local/bin"
-    "${config.home.homeDirectory}/.local/share/bin"
-    "/opt/homebrew/bin"
-    "/opt/homebrew/sbin"
     "${config.home.sessionVariables.ANDROID_HOME}/emulator"
     "${config.home.sessionVariables.ANDROID_HOME}/platform-tools"
     "${config.home.sessionVariables.ANDROID_HOME}/cmdline-tools/latest/bin"
@@ -63,7 +60,6 @@
     "${config.home.sessionVariables.TIZEN_HOME}/tools/device-manager/bin/device-manager.app/Contents/MacOS"
     "${config.home.sessionVariables.TIZEN_HOME}/tools/tizen-core"
     "${config.home.sessionVariables.TIZEN_HOME}/package-manager/package-manager.app/Contents/MacOS"
-    "${config.home.sessionVariables.TIZEN_HOME}/package-manager/package-manager-cli.bin"
   ];
 
   home.shell.enableZshIntegration = true;

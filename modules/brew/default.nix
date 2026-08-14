@@ -24,10 +24,6 @@
         trusted = true;
       }
       {
-        name = "jundot/omlx";
-        trusted = true;
-      }
-      {
         name = "proshunsuke/colmsg";
         trusted = true;
       }
