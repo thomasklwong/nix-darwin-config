@@ -11,6 +11,7 @@
       settings = {
         color_theme = "catppuccin";
         experimental = true;
+        disable_tools = [ "update_check" ];
         gpg_verify = true;
         idiomatic_version_file_enable_tools = [
           "node"

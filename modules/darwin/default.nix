@@ -73,8 +73,6 @@ in
       { path = "/Applications/Fork.app/"; }
       { path = "/Applications/Obsidian.app/"; }
       { path = "/Applications/Visual Studio Code.app/"; }
-      { path = "/Applications/Notion.app/"; }
-      { path = "/Applications/Notion Calendar.app/"; }
       { path = "/Applications/Ghostty.app/"; }
       {
         path = "/Users/${user}/Downloads";

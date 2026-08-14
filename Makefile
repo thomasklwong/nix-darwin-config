@@ -1,15 +1,22 @@
-.PHONY: all update clean update-nix update-brew update-mise _update-mise clean-nix clean-brew clean-mise fmt check-all
+.PHONY: all update update-packages update-nix update-brew update-mas update-mise _update-nix _update-brew _update-mas _update-mise clean clean-nix clean-brew clean-mise fmt check-all
 .DEFAULT_GOAL := all
 
 all: bootstrap
 	$(MAKE) update
 	$(MAKE) clean
 
+# Fast update: apply local configuration changes without upgrading external package managers
 update: bootstrap
+	$(MAKE) _update-nix
+
+# Full update: upgrade all package management systems (Nix flake inputs, Homebrew, MAS, Mise)
+update-packages: bootstrap
 	nix flake update
 	$(MAKE) _update-nix
 	$(MAKE) _update-brew
+	$(MAKE) _update-mas
 	$(MAKE) _update-mise
+	$(MAKE) clean
 
 clean: bootstrap
 	$(MAKE) clean-nix
@@ -17,12 +24,16 @@ clean: bootstrap
 	$(MAKE) clean-mise
 
 update-nix: bootstrap
+	nix flake update
 	$(MAKE) _update-nix
 	$(MAKE) clean-nix
 
 update-brew: bootstrap
 	$(MAKE) _update-brew
 	$(MAKE) clean-brew
+
+update-mas: bootstrap
+	$(MAKE) _update-mas
 
 update-mise:
 	$(MAKE) _update-mise
@@ -34,7 +45,13 @@ _update-nix:
 	sudo ./result/sw/bin/darwin-rebuild switch --flake .#macbook
 
 _update-brew:
-	brew upgrade
+	HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_ENV_HINTS=1 brew upgrade
+
+_update-mas:
+	@if command -v mas >/dev/null 2>&1; then \
+		echo "Upgrading Mac App Store apps..."; \
+		mas upgrade; \
+	fi
 
 _update-mise:
 	mise upgrade --bump

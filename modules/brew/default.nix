@@ -12,10 +12,6 @@
 
     taps = [
       {
-        name = "arthur-ficial/tap";
-        trusted = true;
-      }
-      {
         name = "entireio/tap";
         trusted = true;
       }
@@ -25,6 +21,10 @@
       }
       {
         name = "hmans/beans";
+        trusted = true;
+      }
+      {
+        name = "jundot/omlx";
         trusted = true;
       }
       {
@@ -48,32 +48,21 @@
     ];
 
     brews = [
-      "apfel"
-      "cairo"
       "cocoapods"
       "colima"
       "colmsg"
       "container"
       "czkawka"
       "gallery-dl"
-      "giflib"
       "gnu-sed"
       "go"
-      "hashicorp/tap/terraform"
       "instaloader"
       "jadx"
-      "jpeg"
-      "libpng"
-      "librsvg"
       "mas"
       "mole"
       "mtr"
-      # "omlx"
-      "pango"
-      "pixman"
-      "pkg-config"
+      "omlx"
       "python-setuptools"
-      "ramalama"
       "ruby-build"
       "teamookla/speedtest/speedtest"
       "tsduck"
@@ -83,7 +72,7 @@
 
     casks = [
       "1password"
-      #"adobe-digital-editions"
+      "adobe-digital-editions"
       "android-studio"
       "antigravity"
       "antigravity-cli"
@@ -99,7 +88,6 @@
       "entire"
       "firefox"
       "firefox@developer-edition"
-      "fork"
       "ghostty"
       "google-chrome"
       "google-chrome@canary"
@@ -115,8 +103,6 @@
       "macs-fan-control"
       "mitmproxy"
       "nordvpn"
-      "notion"
-      "notion-calendar"
       "notunes"
       "obsidian"
       "porting-kit"

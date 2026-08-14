@@ -10,8 +10,10 @@ final: prev: {
 
   # mise 2026.6.11: oci::layer test fails on macOS due to setuid/setgid bit handling differences.
   # Disable tests to unblock the build.
+  # mise 2026.8.3: libz-ng-sys requires cmake at build time.
   mise = prev.mise.overrideAttrs (old: {
     doCheck = false;
+    nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ prev.cmake ];
   });
 
   pythonPackagesExtensions = (prev.pythonPackagesExtensions or [ ]) ++ [
