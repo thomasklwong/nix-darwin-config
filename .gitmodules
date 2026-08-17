@@ -1,3 +1,0 @@
-[submodule "old-config"]
-	path = old-config
-	url = https://github.com/thomasklwong/old-nixos-config.git

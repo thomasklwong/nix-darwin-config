@@ -40,6 +40,9 @@
       # 1. Enable unique constraints on PATH to auto-remove duplicates
       typeset -U path
 
+      if [ -f "/opt/homebrew/bin/brew" ]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      fi
 
       if [ -d "$ANDROID_HOME/ndk" ]; then
          export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 "$ANDROID_HOME/ndk" | head -n 1)"

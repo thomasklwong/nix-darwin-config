@@ -50,6 +50,8 @@
   };
 
   home.sessionPath = [
+    "/opt/homebrew/bin"
+    "/opt/homebrew/sbin"
     "${config.home.homeDirectory}/.local/bin"
     "${config.home.sessionVariables.ANDROID_HOME}/emulator"
     "${config.home.sessionVariables.ANDROID_HOME}/platform-tools"

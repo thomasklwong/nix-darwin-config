@@ -1,6 +1,9 @@
 .PHONY: all update update-packages update-nix update-brew update-mas update-mise _update-nix _update-brew _update-mas _update-mise clean clean-nix clean-brew clean-mise fmt check-all
 .DEFAULT_GOAL := all
 
+BREW_PATH := /opt/homebrew/bin/brew
+export PATH := /opt/homebrew/bin:$(PATH)
+
 all: bootstrap
 	$(MAKE) update
 	$(MAKE) clean
@@ -45,7 +48,7 @@ _update-nix:
 	sudo ./result/sw/bin/darwin-rebuild switch --flake .#macbook
 
 _update-brew:
-	HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_ENV_HINTS=1 brew upgrade
+	HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_ENV_HINTS=1 $(BREW_PATH) upgrade
 
 _update-mas:
 	@if command -v mas >/dev/null 2>&1; then \
@@ -61,7 +64,7 @@ clean-nix:
 	nix-collect-garbage --delete-older-than 7d
 
 clean-brew:
-	brew cleanup --prune=all
+	$(BREW_PATH) cleanup --prune=all
 
 clean-mise:
 	mise prune -y
@@ -73,7 +76,6 @@ check-all:
 	$(MAKE) fmt
 	nix build .#darwinConfigurations.macbook.system --dry-run
 
-BREW_PATH := /opt/homebrew/bin/brew
 bootstrap:
 	@if [ ! -f $(BREW_PATH) ]; then \
 		echo "Homebrew not found. Installing..."; \

@@ -60,6 +60,7 @@
       "omlx"
       "python-setuptools"
       "ruby-build"
+      "sherlock"
       "teamookla/speedtest/speedtest"
       "tsduck"
       "you-get"
