@@ -12,6 +12,12 @@
 
     dotDir = "${config.xdg.configHome}/zsh";
 
+    envExtra = ''
+      if [ -f "/opt/homebrew/bin/brew" ]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      fi
+    '';
+
     history = {
       size = 100000;
       save = 100000;

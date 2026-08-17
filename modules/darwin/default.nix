@@ -54,6 +54,10 @@ in
   };
 
   programs.zsh.enable = true;
+  environment.systemPath = [
+    "/opt/homebrew/bin"
+    "/opt/homebrew/sbin"
+  ];
   environment.shells = [
     pkgs.bashInteractive
     pkgs.zsh
