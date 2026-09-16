@@ -75,17 +75,22 @@
       "antigravity-cli"
       "antigravity-ide"
       "appcleaner"
+      "balenaetcher"
       "bruno"
       "caffeine"
       "calibre"
       "charles"
       "coconutbattery"
       "codexbar"
+      "copilot-cli"
+      "cyberduck"
       "disk-drill"
       "entire"
       "firefox"
       "firefox@developer-edition"
+      "fork"
       "ghostty"
+      "github-copilot-app"
       "google-chrome"
       "google-chrome@canary"
       "google-drive"
@@ -97,16 +102,24 @@
       "keka"
       "kindle-previewer"
       "macs-fan-control"
+      "microsoft-edge"
+      "microsoft-office"
+      "microsoft-teams"
       "mitmproxy"
       "nordvpn"
       "notunes"
+      "obs"
       "obsidian"
+      "onedrive"
       "openlogi"
+      "orbstack"
+      "orion"
       "porting-kit"
       "postman"
       "raspberry-pi-imager"
       "rectangle"
       "signal"
+      "slack"
       "spotify"
       "tailscale-app" # This also expose tailscale CLI as /usr/local/bin/tailscale
       "teamviewer"
@@ -128,14 +141,16 @@
       # Logged into the Mac App Store before running the nix-darwin rebuild.
       # "iMovie" = 408981434;
       "Keynote" = 409183694;
-      # "Pages" = 409201541;
-      # "Numbers" = 409203825;
+      "Pages" = 361309726;
+      "Numbers" = 361304891;
       "Disk Speed Test" = 425264550;
+      "DuckDuckGo" = 663592361;
       "Xcode" = 497799835;
       "LINE" = 539883307;
       # "GarageBand" = 682658836;
       # "GoPro Player" = 1460836908;
       "HP Smart" = 1474276998;
+      "Windows App" = 1295203466;
       "1Password for Safari" = 1569813296;
       # "Wireless@SGx" = 1449928544;
     };
