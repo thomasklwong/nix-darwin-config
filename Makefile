@@ -5,8 +5,7 @@ BREW_PATH := /opt/homebrew/bin/brew
 export PATH := /opt/homebrew/bin:$(PATH)
 
 all: bootstrap
-	$(MAKE) update
-	$(MAKE) clean
+	$(MAKE) update-packages
 
 # Fast update: apply local configuration changes without upgrading external package managers
 update: bootstrap
