@@ -47,7 +47,7 @@ _update-nix:
 	sudo ./result/sw/bin/darwin-rebuild switch --flake .#macbook
 
 _update-brew:
-	HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_ENV_HINTS=1 $(BREW_PATH) upgrade
+	HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_ENV_HINTS=1 $(BREW_PATH) upgrade -y
 
 _update-mas:
 	@if command -v mas >/dev/null 2>&1; then \
@@ -56,7 +56,7 @@ _update-mas:
 	fi
 
 _update-mise:
-	mise upgrade --bump
+	mise upgrade --bump -y
 
 clean-nix:
 	rm -f result

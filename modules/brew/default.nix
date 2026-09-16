@@ -110,7 +110,6 @@
       "notunes"
       "obs"
       "obsidian"
-      "onedrive"
       "openlogi"
       "orbstack"
       "orion"
