@@ -26,7 +26,7 @@
 
         node.corepack = true;
 
-        npm.package_manager = "pnpm";
+        npm.package_manager = "auto";
 
         python.uv_venv_auto = "create|source";
       };

@@ -53,6 +53,7 @@
       "gnu-sed"
       "go"
       "instaloader"
+      "ipinfo-cli"
       "jadx"
       "mas"
       "mole"
