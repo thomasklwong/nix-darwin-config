@@ -121,6 +121,7 @@
       "signal"
       "slack"
       "spotify"
+      "superwhisper"
       "tailscale-app" # This also expose tailscale CLI as /usr/local/bin/tailscale
       "teamviewer"
       "telegram"
