@@ -84,12 +84,10 @@
       "coconutbattery"
       "codexbar"
       "copilot-cli"
-      "cyberduck"
       "disk-drill"
       "entire"
       "firefox"
       "firefox@developer-edition"
-      "fork"
       "ghostty"
       "github-copilot-app"
       "google-chrome"
@@ -113,7 +111,6 @@
       "obsidian"
       "openlogi"
       "orbstack"
-      "orion"
       "porting-kit"
       "postman"
       "raspberry-pi-imager"
@@ -134,7 +131,6 @@
       "wireshark-app"
       "xquartz"
       "yam-display"
-      "zen"
       "zenmap"
     ];
 
@@ -145,7 +141,6 @@
       "Pages" = 361309726;
       "Numbers" = 361304891;
       "Disk Speed Test" = 425264550;
-      "DuckDuckGo" = 663592361;
       "Xcode" = 497799835;
       "LINE" = 539883307;
       # "GarageBand" = 682658836;

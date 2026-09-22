@@ -75,7 +75,6 @@ in
       { path = "/Applications/Google Chrome Canary.app/"; }
       { path = "/Applications/Safari.app/"; }
       { path = "/Applications/1Password.app/"; }
-      { path = "/Applications/Fork.app/"; }
       { path = "/Applications/Obsidian.app/"; }
       { path = "/Applications/Visual Studio Code.app/"; }
       { path = "/Applications/Ghostty.app/"; }
