@@ -13,6 +13,7 @@ in
     ./system-defaults.nix
     ./networking.nix
     ./dock.nix
+    ./rectangle.nix
   ];
 
   ids.gids.nixbld = 350;
