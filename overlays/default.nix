@@ -8,12 +8,13 @@ final: prev: {
     doInstallCheck = false;
   });
 
-  # mise 2026.6.11: oci::layer test fails on macOS due to setuid/setgid bit handling differences.
-  # Disable tests to unblock the build.
-  # mise 2026.8.3: libz-ng-sys requires cmake at build time.
-  mise = prev.mise.overrideAttrs (old: {
-    doCheck = false;
-    nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ prev.cmake ];
+  # shaka-packager builds with -Werror, but abseil-cpp deprecates Base64Escape(..., &out).
+  # We treat deprecated declarations as warnings to unblock compilation.
+  shaka-packager = prev.shaka-packager.overrideAttrs (old: {
+    env = (old.env or { }) // {
+      NIX_CFLAGS_COMPILE =
+        toString (old.env.NIX_CFLAGS_COMPILE or "") + " -Wno-error=deprecated-declarations";
+    };
   });
 
   pythonPackagesExtensions = (prev.pythonPackagesExtensions or [ ]) ++ [

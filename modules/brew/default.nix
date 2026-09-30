@@ -24,6 +24,10 @@
         trusted = true;
       }
       {
+        name = "ProducerGuy/tap";
+        trusted = true;
+      }
+      {
         name = "proshunsuke/colmsg";
         trusted = true;
       }
@@ -56,6 +60,7 @@
       "ipinfo-cli"
       "jadx"
       "mas"
+      "mise"
       "mole"
       "mtr"
       "omlx"
@@ -63,6 +68,7 @@
       "ruby-build"
       "sherlock"
       "teamookla/speedtest/speedtest"
+      "thermalforge"
       "tsduck"
       "you-get"
       "yt-dlp"
@@ -100,7 +106,6 @@
       "iina"
       "keka"
       "kindle-previewer"
-      "macs-fan-control"
       "microsoft-edge"
       "microsoft-office"
       "microsoft-teams"

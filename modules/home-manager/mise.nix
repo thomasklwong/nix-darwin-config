@@ -3,7 +3,20 @@
 {
   programs.mise = {
     enable = true;
-    enableZshIntegration = true;
+
+    # The mise binary is managed by Homebrew (modules/brew/default.nix) to use
+    # pre-compiled macOS bottles and avoid building the large Rust package from source.
+    # Setting package = null ensures Home Manager still generates ~/.config/mise/config.toml
+    # declaratively without installing or building pkgs.mise.
+    package = null;
+
+    # Disabled here to avoid HM warnings when package = null;
+    # Shell activation (`eval "$(mise activate zsh)"`) is handled in modules/home-manager/zsh.nix.
+    enableZshIntegration = false;
+    enableBashIntegration = false;
+    enableFishIntegration = false;
+    enableNushellIntegration = false;
+
     globalConfig = {
       hooks = {
         postinstall = "npx corepack enable";
