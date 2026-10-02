@@ -60,6 +60,7 @@
     ls = "ls --color=auto";
     search = "rg -p --glob '!node_modules/*' ";
     diff = "difft";
-    agy = "/Applications/Antigravity.app/Contents/Resources/app/bin/antigravity";
+    antigravity = "agy";
+    gemini = "agy";
   };
 }

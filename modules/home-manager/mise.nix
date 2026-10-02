@@ -48,7 +48,6 @@
         deno = "latest";
         node = "latest";
         pnpm = "latest";
-        "npm:@google/gemini-cli" = "latest";
         "npm:@fission-ai/openspec" = "latest";
         "npm:@aisuite/chub" = "latest";
         "pypi:serena-agent" = "latest";
