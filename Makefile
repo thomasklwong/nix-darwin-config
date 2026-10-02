@@ -1,4 +1,4 @@
-.PHONY: all update update-packages update-nix update-brew update-mas update-mise _update-nix _update-brew _update-mas _update-mise clean clean-nix clean-brew clean-mise fmt check-all
+.PHONY: all update update-packages update-nix update-brew update-mas update-mise update-omlx _update-nix _update-brew _update-mas _update-mise _update-omlx clean clean-nix clean-brew clean-mise fmt check-all
 .DEFAULT_GOAL := all
 
 BREW_PATH := /opt/homebrew/bin/brew
@@ -11,13 +11,14 @@ all: bootstrap
 update: bootstrap
 	$(MAKE) _update-nix
 
-# Full update: upgrade all package management systems (Nix flake inputs, Homebrew, MAS, Mise)
+# Full update: upgrade all package management systems (Nix flake inputs, Homebrew, MAS, Mise, oMLX app)
 update-packages: bootstrap
 	nix flake update
 	$(MAKE) _update-nix
 	$(MAKE) _update-brew
 	$(MAKE) _update-mas
 	$(MAKE) _update-mise
+	$(MAKE) _update-omlx
 	$(MAKE) clean
 
 clean: bootstrap
@@ -41,6 +42,9 @@ update-mise:
 	$(MAKE) _update-mise
 	$(MAKE) clean-mise
 
+update-omlx:
+	$(MAKE) _update-omlx
+
 _update-nix:
 	$(MAKE) fmt
 	nix build .#darwinConfigurations.macbook.system
@@ -57,6 +61,9 @@ _update-mas:
 
 _update-mise:
 	mise upgrade --bump -y
+
+_update-omlx:
+	./scripts/update-omlx-app.sh
 
 clean-nix:
 	rm -f result
