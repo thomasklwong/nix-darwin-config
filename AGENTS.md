@@ -31,3 +31,12 @@ Repository guidelines and architectural context for AI agents (Antigravity / Gem
 * **Formatting:** Always run `nixfmt` on modified `.nix` files before finishing a change.
 * **Validation:** Run `make check-all` (`nix build .#darwinConfigurations.macbook.system --dry-run`) to verify nix evaluation.
 * **Password Privileges:** Commands requiring `sudo` (e.g. `darwin-rebuild switch`) must be executed directly by the user in their terminal.
+
+---
+
+## 4. Git & Commit Workflow
+
+* **Always Ask Destination:** Before committing any changes, always ask the user where they want to commit the changes.
+* **Default Target:** The default option must be the `main` branch.
+* **Offer Branch for Large Changes:** Proactively offer creating a new branch (e.g., `gemini/<description>`) if the change is large, complex, or potentially unsafe.
+
