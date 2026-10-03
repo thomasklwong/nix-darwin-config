@@ -17,6 +17,7 @@
     ./git.nix
     ./ghostty.nix
     ./mise.nix
+    ./serena.nix
     ./zsh.nix
   ];
 
