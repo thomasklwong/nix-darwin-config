@@ -134,6 +134,7 @@
       "utm"
       "visual-studio-code"
       "vlc"
+      "vorssaint"
       "vysor"
       "wireshark-app"
       "xquartz"
