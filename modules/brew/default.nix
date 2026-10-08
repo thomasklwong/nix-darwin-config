@@ -118,6 +118,7 @@
       "obsidian"
       "openlogi"
       "orbstack"
+      "orchard"
       "porting-kit"
       "postman"
       "raspberry-pi-imager"
