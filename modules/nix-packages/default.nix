@@ -77,7 +77,6 @@
     llama-cpp
     lz4
     nss_latest
-    qemu
     fclones
     python313Packages.curl-cffi
 

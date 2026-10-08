@@ -31,8 +31,8 @@
           "python"
         ];
 
-        # Wait 7 days before install tool to avoid supply chain attack.
-        install_before = "7d";
+        # Wait 7 days before installing a tool release to avoid supply chain attacks.
+        minimum_release_age = "7d";
 
         # Config files with this prefix will be trusted by default
         trusted_config_paths = [ "~/src" ];
